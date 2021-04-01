@@ -31,3 +31,6 @@ body {
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   padding: 40px;
 }
+.temperature-container {
+  justify-content: right;
+}
