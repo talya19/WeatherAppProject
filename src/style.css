@@ -11,6 +11,9 @@ h1 {
   line-height: 30px;
   margin-bottom: 10px;
 }
+a {
+  text-decoration: none;
+}
 footer {
   margin: 5px 10px;
   color: grey;
@@ -61,8 +64,8 @@ li {
   font-size: 60px;
   line-height: 1;
 }
-.temperature-container.units {
-  position: relative;
+.temperature-container .units {
   font-size: 16px;
-  top: -100px;
+  position: relative;
+  top: -24px;
 }
