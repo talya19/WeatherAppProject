@@ -1,3 +1,15 @@
+function formatDate(timestamp){
+ let date= new Date (timestamp);
+ let hours= date.getHours();
+ let minutes=date.getMinutes();
+ let days=["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+ let day=days[date.getDay()];
+ if (minutes<10){
+     minutes=`0${minutes}`;
+ }
+    return `${day}, ${hours}:${minutes}`
+}
+
 function displayTemperature (response){
     console.log(response.data);
     let temperatureElement=document.querySelector("#temperature");
@@ -10,6 +22,8 @@ function displayTemperature (response){
     humidityElement.innerHTML=response.data.main.humidity;
     let windElement=document.querySelector("#wind");
     windElement.innerHTML=Math.round(response.data.wind.speed);
+    let dateElement=document.querySelector("#date");
+    dateElement.innerHTML=formatDate(response.data.dt*1000);
 }
 
 let apiKey="e0f9cf2497fe0ed03d06e212d42c8fba";
