@@ -7,6 +7,9 @@ function formatDate(timestamp){
  if (minutes<10){
      minutes=`0${minutes}`;
  }
+ if (hours<10){
+     hours=`0${hours}`;
+ }
     return `${day}, ${hours}:${minutes}`
 }
 
@@ -24,6 +27,8 @@ function displayTemperature (response){
     windElement.innerHTML=Math.round(response.data.wind.speed);
     let dateElement=document.querySelector("#date");
     dateElement.innerHTML=formatDate(response.data.dt*1000);
+    let imageElement=document.querySelector("#weatherImage");
+    imageElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 let city="Paris"
 let apiKey="e0f9cf2497fe0ed03d06e212d42c8fba";
