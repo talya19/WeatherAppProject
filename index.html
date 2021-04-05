@@ -19,19 +19,26 @@
         <h4>
             Talya's Weather App
         </h4>
-</br>
+        <div class="row">
+            <div class="col-9">
+<form action="" id="search-form">
+    <input type="search" class="form-control" placeholder="Type a city..." id="cityInput" autocomplete="off">
+            </div>
+<div class="col-3">
+    <button type="submit" class="btn btn-primary" id="searchWeather">Search</button>
+</div>
+</form>
+        </div>
+        
          <div class="row">
            <div class="col-6">
     <h1 id="city"> </h1>
     <ul>
-        <li>
-            Last updated: <span id="date"></span> 
-        </li>
             <li>
          <span id="description"></span>
             </li> 
         
-        <li> Humidity: <span id="humidity"></span>% </li>
+        <li> Humidity: <span id="humidity"></span>%</li>
         <li> Wind: <span id="wind"></span> km/h </li>
     </ul>
            </div>
@@ -45,6 +52,10 @@
            </div>
     
            </div>  
+        <em>
+        Last updated: <span id="date"></span>
+        </em>
+
           </div>
 <footer>Open-source code by <a href="https://github.com/talya19/WeatherAppProject">talya19</a></footer>
     </div>

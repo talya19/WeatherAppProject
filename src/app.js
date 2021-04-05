@@ -14,7 +14,6 @@ function formatDate(timestamp){
 }
 
 function displayTemperature (response){
-    console.log(response.data);
     let temperatureElement=document.querySelector("#temperature");
     temperatureElement.innerHTML=Math.round(response.data.main.temp);
     let cityElement=document.querySelector("#city");
@@ -29,9 +28,22 @@ function displayTemperature (response){
     dateElement.innerHTML=formatDate(response.data.dt*1000);
     let imageElement=document.querySelector("#weatherImage");
     imageElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    imageElement.setAttribute("alt",response.data.weather[0].description);
+
 }
-let city="Paris"
+
+function search (city){
 let apiKey="e0f9cf2497fe0ed03d06e212d42c8fba";
 let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
 axios.get(apiUrl).then(displayTemperature);
+}
+
+
+function handleSubmit(event){
+event.preventDefault();
+let cityInput= document.querySelector("#cityInput");
+search(cityInput.value);
+}
+
+let form=document.querySelector("#search-form");
+form.addEventListener("submit",handleSubmit)

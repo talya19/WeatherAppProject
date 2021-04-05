@@ -34,6 +34,7 @@ li {
   margin: 0;
   padding: 0;
 }
+
 li:first-letter {
   text-transform: capitalize;
 }
@@ -71,4 +72,8 @@ li:first-letter {
   font-size: 16px;
   position: relative;
   top: -24px;
+}
+
+.Weather .row {
+  margin-block-end: 10px;
 }
