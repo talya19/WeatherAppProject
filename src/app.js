@@ -14,8 +14,9 @@ function formatDate(timestamp){
 }
 
 function displayTemperature (response){
+    celsiusTemperature=response.data.main.temp;
     let temperatureElement=document.querySelector("#temperature");
-    temperatureElement.innerHTML=Math.round(response.data.main.temp);
+    temperatureElement.innerHTML=Math.round(celsiusTemperature);
     let cityElement=document.querySelector("#city");
     cityElement.innerHTML=response.data.name;
     let descriptionElement=document.querySelector("#description");
@@ -29,7 +30,6 @@ function displayTemperature (response){
     let imageElement=document.querySelector("#weatherImage");
     imageElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     imageElement.setAttribute("alt",response.data.weather[0].description);
-
 }
 
 function search (city){
@@ -38,6 +38,28 @@ let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ap
 axios.get(apiUrl).then(displayTemperature);
 }
 
+function displayFahrenheitTemperature(event){
+event.preventDefault();
+let temperatureElement=document.querySelector("#temperature");
+let fahrenheitTemperature=(celsiusTemperature*9/5) +32;
+celsiusLink.classList.remove("active");
+fahrenheitLink.classList.add("active");
+temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
+}
+function displaycelsiusTemperature(event){
+event.preventDefault();
+let temperatureElement=document.querySelector("#temperature");
+fahrenheitLink.classList.remove("active");
+celsiusLink.classList.add("active");
+temperatureElement.innerHTML=Math.round(celsiusTemperature);
+}
+let celsiusTemperature=null;
+
+let fahrenheitLink=document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click",displayFahrenheitTemperature);
+
+let celsiusLink=document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click",displaycelsiusTemperature);
 
 function handleSubmit(event){
 event.preventDefault();
@@ -47,3 +69,5 @@ search(cityInput.value);
 
 let form=document.querySelector("#search-form");
 form.addEventListener("submit",handleSubmit)
+
+search("Tel Aviv");

@@ -11,9 +11,7 @@ h1 {
   line-height: 30px;
   margin-bottom: 10px;
 }
-a {
-  text-decoration: none;
-}
+
 footer {
   margin: 5px 10px;
   color: grey;
@@ -76,4 +74,12 @@ li:first-letter {
 
 .Weather .row {
   margin-block-end: 10px;
+}
+.temperature-container .active {
+  color: #212529;
+  cursor: default;
+  text-decoration: none;
+}
+.temperature-container .active:hover {
+  text-decoration: none;
 }
