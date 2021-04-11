@@ -34,9 +34,6 @@
            <div class="col-6">
     <h1 id="city"> </h1>
     <ul>
-            <li>
-         <span id="description"></span>
-            </li> 
         
         <li> Humidity: <span id="humidity"></span>%</li>
         <li> Wind: <span id="wind"></span> km/h </li>
@@ -44,18 +41,31 @@
            </div>
            <div class="col-6">
               <div class="temperature-container">
-              <img src="" alt="" id="weatherImage"/> 
+              <img src="" alt="" id="weatherImage" class="crop"/> 
+            
                <strong id="temperature"></strong>
             <span class="units"><a href="#" id="celsius-link" class="active">ºC</a> | <a href="#" id="fahrenheit-link">ºF</a>
                 </span>
+                <div id="description"></div>
               </div>
            </div>
     
            </div>  
+        <div class="weather-forecast">
+            <div class="row">
+                <div class="col-2">
+                    <div class="weather-forecast-date"> 
+                     Sun
+                    </div>
+                    <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="partly cloudy" class="weather-forecast-img">
+                    <span class="weather-forecast-temp-max">18º</span>|<span class="weather-forecast-temp-min"> 12º</span>
+                </div>
+            </div>
+            
+        </div>   
         <em>
-        Last updated: <span id="date"></span>
-        </em>
-
+        <small>Last updated: <span id="date"></span></small>
+        </em>           
           </div>
 <footer>Open-source code by <a href="https://github.com/talya19/WeatherAppProject">talya19</a></footer>
     </div>

@@ -54,13 +54,21 @@ li:first-letter {
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
   padding: 20px;
 }
+
 .temperature-container {
   text-align: right;
 }
+.temperature-container #description:first-letter {
+  text-transform: capitalize;
+}
+.temperature-container #description {
+  font-size: 20px;
+  text-align: left;
+}
 .temperature-container img {
-  margin: 5px 5px;
   height: 100px;
   width: 100px;
+  background-size: cover;
 }
 .temperature-container strong {
   font-size: 60px;
@@ -82,4 +90,14 @@ li:first-letter {
 }
 .temperature-container .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast {
+  text-align: center;
+}
+.weather-forecast-temp-max {
+  font-weight: bolder;
+}
+.weather-forecast-temp-min {
+  opacity: 0.6;
 }
