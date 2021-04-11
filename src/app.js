@@ -53,6 +53,24 @@ fahrenheitLink.classList.remove("active");
 celsiusLink.classList.add("active");
 temperatureElement.innerHTML=Math.round(celsiusTemperature);
 }
+function displayForecast(){
+let forecastElement=document.querySelector(".weather-forecast");
+let forecastHTML=`<div class=row>`;
+let days=["Sun","Mon","Tue","Wed","Thu","Fri"];
+days.forEach(function(day){
+forecastHTML=forecastHTML+
+`<div class="col-2">
+     <div class="weather-forecast-date"> 
+        ${day}
+    </div>
+    <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="partly cloudy" class="weather-forecast-img">
+    <span class="weather-forecast-temp-max">18º</span>|<span class="weather-forecast-temp-min"> 12º</span>
+</div>`;
+})
+forecastHTML=forecastHTML+`</div>`;
+forecastElement.innerHTML=forecastHTML;
+}
+
 let celsiusTemperature=null;
 
 let fahrenheitLink=document.querySelector("#fahrenheit-link");
@@ -68,6 +86,7 @@ search(cityInput.value);
 }
 
 let form=document.querySelector("#search-form");
-form.addEventListener("submit",handleSubmit)
+form.addEventListener("submit",handleSubmit);
 
 search("Tel Aviv");
+displayForecast();

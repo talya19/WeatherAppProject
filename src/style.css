@@ -95,6 +95,9 @@ li:first-letter {
 .weather-forecast {
   text-align: center;
 }
+.weather-forecast img {
+  width: 50px;
+}
 .weather-forecast-temp-max {
   font-weight: bolder;
 }
