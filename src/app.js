@@ -14,7 +14,6 @@ function formatDate(timestamp){
 }
 
 function displayTemperature (response){
-    console.log(response)
     celsiusTemperature=response.data.main.temp;
     let temperatureElement=document.querySelector("#temperature");
     temperatureElement.innerHTML=Math.round(celsiusTemperature);
@@ -31,6 +30,7 @@ function displayTemperature (response){
     let imageElement=document.querySelector("#weatherImage");
     imageElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     imageElement.setAttribute("alt",response.data.weather[0].description);
+getForecast(response.data.coord)
 }
 
 function search (city){
@@ -54,11 +54,14 @@ fahrenheitLink.classList.remove("active");
 celsiusLink.classList.add("active");
 temperatureElement.innerHTML=Math.round(celsiusTemperature);
 }
-function getForecast(){
-
+function getForecast(coordinates){
+let apiKey="e0f9cf2497fe0ed03d06e212d42c8fba";
+let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+axios.get(apiUrl).then(displayForecast);
 }
 
-function displayForecast(){
+function displayForecast(response){
+console.log(response.data.daily);
 let forecastElement=document.querySelector(".weather-forecast");
 let forecastHTML=`<div class=row>`;
 let days=["Sun","Mon","Tue","Wed","Thu","Fri"];
@@ -94,5 +97,3 @@ let form=document.querySelector("#search-form");
 form.addEventListener("submit",handleSubmit);
 
 search("Tel Aviv");
-displayForecast();
-getForecast()
