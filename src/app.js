@@ -14,6 +14,7 @@ function formatDate(timestamp){
 }
 
 function displayTemperature (response){
+    console.log(response)
     celsiusTemperature=response.data.main.temp;
     let temperatureElement=document.querySelector("#temperature");
     temperatureElement.innerHTML=Math.round(celsiusTemperature);
@@ -53,6 +54,10 @@ fahrenheitLink.classList.remove("active");
 celsiusLink.classList.add("active");
 temperatureElement.innerHTML=Math.round(celsiusTemperature);
 }
+function getForecast(){
+
+}
+
 function displayForecast(){
 let forecastElement=document.querySelector(".weather-forecast");
 let forecastHTML=`<div class=row>`;
@@ -90,3 +95,4 @@ form.addEventListener("submit",handleSubmit);
 
 search("Tel Aviv");
 displayForecast();
+getForecast()
