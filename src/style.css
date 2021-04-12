@@ -3,7 +3,7 @@ body {
   line-height: 1.5;
   margin: 0;
   text-align: left;
-  background-color: pink;
+  background-image: url("https://images.unsplash.com/photo-1592210454359-9043f067919b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8d2VhdGhlcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80");
 }
 h1 {
   font-family: "Kiwi Maru", serif;
@@ -14,13 +14,16 @@ h1 {
 
 footer {
   margin: 5px 10px;
-  color: grey;
+  color: white;
   font-weight: 200;
   font-size: 14px;
 }
 ul {
   margin: 0;
   padding: 0;
+}
+a {
+  color: blue;
 }
 
 li {

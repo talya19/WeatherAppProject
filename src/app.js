@@ -82,7 +82,7 @@ forecastHTML+`<div class="col-2">
         ${formatDay(forecastDay.dt)}
     </div>
     <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt=${forecastDay.weather[0].description} class="weather-forecast-img">
-    <span class="weather-forecast-temp-max">${Math.round(forecastDay.temp.max)}º</span>|<span class="weather-forecast-temp-min"> ${Math.round(forecastDay.temp.min)}º</span>
+    <div> <span class="weather-forecast-temp-max">${Math.round(forecastDay.temp.max)}º</span>|<span class="weather-forecast-temp-min"> ${Math.round(forecastDay.temp.min)}º</span> </div>
 </div>`;    } 
 })
 forecastHTML=forecastHTML+`</div>`;
